@@ -1,0 +1,50 @@
+Funkcionalni zahtjevi DHWmgm prototipa - Verzija 1.0-23092016
+
+Prototip treba da omoguci automatsku kontrolu/regulaciju elektricnog bojlera za grijanje sanitarne vode na opisani nacin i minimalne uslove.
+
+
+
+1. Obavezne funkcionalnosti.
+
+	1.1. Korisnicki interface.
+
+	Omoguciti pristup svim parametrima sistema i informacijama/statusima namjenjenih korisniku kroz fizicki i udaljeni pristup. Fizicki pristup se sastoji od jednostavne tastature i display-a. Udaljeni pristup omoguciti upotrebom bezicnih komunikacionih kanala (BT i/ili WiFi i/ili GSM/GPRS) i mobilne aplikacije za android platformu. Korisnicki interface treba biti jednostavan i "user friendly".   
+
+
+	1.2. Periodi odrzavanja zadate temperature.
+
+	Omoguciti odrzavanje zadate temperature u najmanje tri perioda u danu, posebno za svaki dan u sedmici ili grupu dana (radni/neradni dani) radi brzeg konfigurisanja. Tenperatura je podesiva za svaki definisani period posebno. Periodi su poredani hronoloski bez mogucnosti preklapanja. Podesavanje vremena se vrsi u koracima od 10 minuta. Minimalno trajanje perioda je 10 minuta. Periodi mogu biti nastavni jedan na drugi.
+
+
+	1.3. Periodi odrzavanja minimalne temperature tokom dana i noci.
+
+	Pored mogucnosti definisanja dnevnih perioda rada, implementirati i dva specijalna perioda, dnevni i nocni minimum, svaki sa podesivom vrijednosti temperature. Dnevni i nocni minimum moraju biti nastavni jedan na drugi u okviru svih 24 sata, baz prekida tj bez perioda nedefinisanog stanja. Svrha minimuma je odrzavanje zadate minimalne temperature sanitarne vode tokom dana i noci radi komfora korisnika i brzeg postizanja visih temperatura u periodima koji to traze. Funkcija odrzavanja dnevno/nocnog minimuma se moze iskluciti.
+
+
+	1.4. Manuelno upravljanje.
+
+	Ugraditi mogucnost jednostavnog rucnog upravljanja, odrzavanja zadate temperature, vec iz statusnog menija. 
+
+
+	1.5. Anti legionela protection (ALP).
+
+	Na zadati dan i vrijeme zagrijati DHW na temperaturu od 65°C i odrzavati je na tom nivou 30 minuta. Funkcionalnost se moze iskljuciti.
+
+
+	1.6. Anti frost protection.
+
+	Omoguciti odrzavanje DHW-a na temperaturi visoj od 5°C kao zastitu od smrzavanja.
+
+
+	
+2. Pozeljne funkcionalnosti (funkcionalnosti koje se mogu dodati i u kasnijim verzijama):
+
+
+	2.1. Logiranje statusa bojlera.
+
+	Omoguciti pregled potrosnje el. energije, temperaturnu krivu i protok sanitarne vode. Log treba da sadrzi podatke za zadnjih 7 dana + tekuci dan nakon cega zastarjevaju i mogu se brisati. Obezbjediti mogucnost da se log mogze prenijeti putem implementiranih komunikacionih kanala na vanjski uredjaj u obliku file-a ili data stream-a.
+
+
+	2.2. Learning mode.
+
+	Kontroler treba da omoguci korisniku da aktivira mod ucenja njegovih navika. Pratiti potrosnju tople vode kroz period od dvije sedmice i na osnovu sakupljenih podataka kreira najoptimalnije karakteristike grijanja.
