@@ -1,1 +1,48 @@
+HW pecifikacija
+
+1. Arduino Pro Mini board
+	Microcontroller	ATmega328P
+	Board Power Supply 5 - 12 V (5V model)
+	Circuit Operating Voltage 5V
+	Digital I/O Pins	14
+	PWM Pins	6
+	UART	1
+	SPI	1
+	I2C	1
+	Analog Input Pins	6
+	External Interrupts	2
+	DC Current per I/O Pin	40 mA
+	Flash Memory	32KB of which 2 KB used by bootloader
+	SRAM	2 KB
+	EEPROM	1 KB
+	Clock 16 MHz 
+	
+2. RTC module ZS-042
+	DS3231 RTC
+	Highly Accurate RTC Completely Manages All Timekeeping Functions
+	Real-Time Clock Counts Seconds, Minutes, Hours, Date of the Month, Month, Day of the Week, and Year, with Leap-Year Compensation Valid Up to 2100
+	Accuracy ±2ppm from 0°C to +40°C
+	Accuracy ±3.5ppm from -40°C to +85°C
+	Digital Temp Sensor Output: ±3°C Accuracy
+	Register for Aging Trim
+	Active-Low RST Output/Pushbutton Reset Debounce Input
+	Two Time-of-Day Alarms
+	Programmable Square-Wave Output Signal
+	Simple Serial Interface Connects to Most Microcontrollers
+	Fast (400kHz) I2C Interface
+	Battery-Backup Input for Continuous Timekeeping
+	Low Power Operation Extends Battery-Backup Run Time
+	3.3V Operation
+	Operating Temperature Ranges: Commercial (0°C to +70°C) and Industrial (-40°C to +85°C)
+	Underwriters Laboratories® (UL) Recognized
+
+3. Waterproof Digital Thermal Probe DS18B20
+	Measures Temperatures from -55°C to +125°C (-67°F to +257°F)
+	±0.5°C Accuracy from -10°C to +85°C
+	Programmable Resolution from 9 Bits to 12 Bits
+
+SSR Module SSR-40 DA
+PSU AC220V-DC5V
+LCD Display
+Analog Keypad
 
