@@ -1,5 +1,6 @@
 HW pecifikacija
 
+
 1. Arduino Pro Mini board with male pins headers
 	
 	Tech. Spec:
@@ -18,6 +19,7 @@ HW pecifikacija
 	SRAM	2 KB
 	EEPROM	1 KB
 	Clock 16 MHz 
+	
 	
 2. RTC module ZS-042
 	
@@ -40,13 +42,39 @@ HW pecifikacija
 	Operating Temperature Ranges: Commercial (0°C to +70°C) and Industrial (-40°C to +85°C)
 	Underwriters Laboratories® (UL) Recognized
 
-3. Waterproof Digital Thermal Probe DS18B20
+	
+3. Waterproof Digital Thermal Probe
+
+	Tech. Spec:
+	Sensor DS18B20
 	Measures Temperatures from -55°C to +125°C (-67°F to +257°F)
 	±0.5°C Accuracy from -10°C to +85°C
 	Programmable Resolution from 9 Bits to 12 Bits
 
-SSR Module SSR-40 DA
-PSU AC220V-DC5V
-LCD Display
-Analog Keypad
+
+4. BlueTooth serial module
+
+
+
+5. GSM module
+
+
+	
+6. SSR Module SSR-40 DA
+
+
+
+7. PSU AC220V-DC5V
+
+
+
+8. LCD Display
+
+
+
+9. Analog Keypad
+
+
+10. Plastic box enclosure
+
 
