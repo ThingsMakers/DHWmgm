@@ -1,6 +1,8 @@
 HW pecifikacija
 
-1. Arduino Pro Mini board
+1. Arduino Pro Mini board with male pins headers
+	
+	Tech. Spec:
 	Microcontroller	ATmega328P
 	Board Power Supply 5 - 12 V (5V model)
 	Circuit Operating Voltage 5V
@@ -18,7 +20,9 @@ HW pecifikacija
 	Clock 16 MHz 
 	
 2. RTC module ZS-042
-	DS3231 RTC
+	
+	Tech. Spec:	
+	RTC Chip DS3231
 	Highly Accurate RTC Completely Manages All Timekeeping Functions
 	Real-Time Clock Counts Seconds, Minutes, Hours, Date of the Month, Month, Day of the Week, and Year, with Leap-Year Compensation Valid Up to 2100
 	Accuracy ±2ppm from 0°C to +40°C
