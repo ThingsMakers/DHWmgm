@@ -64,10 +64,16 @@ HW pecifikacija
 
 
 
-7. PSU AC220V-DC5V
+7. PSU StepDown AC220V-DC5V
 
+	Tech. Spec:
+	This power source for the isolation industrial-grade built-in power supply module, temperature protection, and short circuit protection, AC85 ~ 265 v input voltage, wide 431 precision voltage stability DC5V output, with mounting holes, with input and output EMI filter circuit, small volume, stable performance, cost-effective
+	-Input voltage of AC 85 ~ 265v 50/60 HZ
+	-Output voltage DC5V（±0.2V）
+	-Output current 1000MA
+	-Power 5w
 
-
+	
 8. LCD Display
 
 
