@@ -1,8 +1,11 @@
 #include <Arduino.h>
 #include <U8glib.h>
 #include "StatusActivity.h"
+#include "MenuActivity.h"
 
 StatusActivity statusActivity;
+MenuActivity menuActivity;
+
 int kpin;
 int activity_index = 0;
 
@@ -25,8 +28,8 @@ void handleInput(){
 
 		case 5:
 	          activity_index += 1;
-	          if(activity_index > 1)
-	        	  activity_index = 1;
+	          if(activity_index > 2)
+	        	  activity_index = 2;
 	          break;
 		}
 
@@ -38,6 +41,7 @@ void drawActivity(){
 	switch(activity_index){
 	case 0: statusActivity.drawEmpty(); break;
 	case 1: statusActivity.draw(); break;
+	case 2: menuActivity.draw(); break;
 
 	}
 

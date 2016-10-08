@@ -1,2 +1,2 @@
-.sc816449158035876490.o: \
- C:\Users\Nihad\workspaceArduino\DH\.sc816449158035876490.cpp
+.sc436945117910779208.o: \
+ C:\Users\Nihad\workspaceArduino\DH\.sc436945117910779208.cpp
