@@ -19,7 +19,7 @@ public:
 
 private:
 	U8GLIB_SSD1306_128X64 *u8g;
-	int input;
+	void drawDaysMenu(int);
 };
 
 #endif /* TIMETABLEACTIVITY_H_ */

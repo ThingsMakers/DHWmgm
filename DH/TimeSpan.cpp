@@ -5,7 +5,7 @@
  *      Author: Nihad
  */
 
-#include "../TimeSpan.h"
+#include "TimeSpan.h"
 
 TimeSpan::TimeSpan() {
 
