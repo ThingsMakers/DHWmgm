@@ -1,0 +1,29 @@
+/*
+ * TimeTable.h
+ *
+ *  Created on: 08. okt. 2016.
+ *      Author: Nihad
+ */
+
+#ifndef BUILD_MODELS_TIMETABLE_H_
+#define BUILD_MODELS_TIMETABLE_H_
+
+#include "TimeSpan.h"
+#include "U8glib.h"
+
+class TimeTable {
+public:
+    TimeTable();
+	virtual ~TimeTable();
+	void drawModificationTimeTables(int, int);
+	void drawTimeTables();
+	void update(int, int, int);
+	void checkAndSetTime(int, int);
+	bool shouldDeselect(int);
+
+private:
+	 TimeSpan vremena[3];
+	 U8GLIB_SSD1306_128X64 *u8g;
+};
+
+#endif /* BUILD_MODELS_TIMETABLE_H_ */
