@@ -10,6 +10,7 @@
 
 #include "U8glib.h"
 #include <Arduino.h>
+#include "TimeTable.h"
 
 class TimeTableActivity {
 public:
@@ -19,7 +20,10 @@ public:
 
 private:
 	U8GLIB_SSD1306_128X64 *u8g;
+	TimeTable times[7];
+
 	void drawDaysMenu(int);
+	void drawDayTimeTable(int);
 };
 
 #endif /* TIMETABLEACTIVITY_H_ */

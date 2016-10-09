@@ -14,4 +14,4 @@ project/MenuActivity.cpp.o: ../../MenuActivity.cpp ../../MenuActivity.h \
  C:/Users/Nihad/.arduinocdt/packages/arduino/hardware/avr/1.6.14/cores/arduino/Arduino.h \
  C:/Users/Nihad/.arduinocdt/packages/arduino/hardware/avr/1.6.14/variants/eightanaloginputs/pins_arduino.h \
  C:/Users/Nihad/.arduinocdt/packages/arduino/hardware/avr/1.6.14/variants/eightanaloginputs/../standard/pins_arduino.h \
- ../../TimeTableActivity.h
+ ../../TimeTableActivity.h ../../TimeTable.h ../../TimeSpan.h

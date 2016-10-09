@@ -74,10 +74,10 @@ void TimeTable::drawModificationTimeTables(int row, int col){
 
 void TimeTable::drawTimeTables(){
 
-		u8g->setFont(u8g_font_6x10);
-		u8g->drawStr(30,30,"Hello Draw");
+	  u8g->setFont(u8g_font_6x10);
+	  u8g->drawStr(50,50,"Hello World");
 
-	/*
+      /*
 	  int y = 30;
 	  for(int i = 0; i < 3;i++){
 	   String newString = " "+vremena[i].getTextBegin()+" - "+vremena[i].getTextEnd()+" " +vremena[i].getTextTemp()+" ";
@@ -86,7 +86,7 @@ void TimeTable::drawTimeTables(){
 	   newString.toCharArray(buffer,size);
 	   u8g->drawStr(1, y, "Hello World");
 	   y += 14;
-	  } */
+	  }*/
 }
 
 void TimeTable::update(int cmd, int row, int col){

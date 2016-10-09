@@ -28,6 +28,7 @@ void TimeTableActivity::draw(){
 		u8g->firstPage();
 			do{
 				drawDaysMenu(day_index);
+				drawDayTimeTable(day_index);
 			}while(u8g->nextPage());
 
 	input=analogRead(15)/140;
@@ -76,5 +77,11 @@ void TimeTableActivity::drawDaysMenu(int day_index){
 	  }
 
 	  u8g->drawHLine(0,15,128);
+}
+
+void TimeTableActivity::drawDayTimeTable(int day_index){
+
+    times[day_index].drawTimeTables(); // ne poziva ???
+
 }
 
