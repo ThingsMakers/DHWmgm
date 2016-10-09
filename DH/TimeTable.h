@@ -16,7 +16,7 @@ public:
     TimeTable();
 	virtual ~TimeTable();
 	void drawModificationTimeTables(int, int);
-	void drawTimeTables();
+	void drawTimeTables(U8GLIB_SSD1306_128X64*);
 	void update(int, int, int);
 	void checkAndSetTime(int, int);
 	bool shouldDeselect(int);

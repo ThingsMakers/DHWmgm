@@ -72,10 +72,10 @@ void TimeTable::drawModificationTimeTables(int row, int col){
 }
 
 
-void TimeTable::drawTimeTables(){
+void TimeTable::drawTimeTables(U8GLIB_SSD1306_128X64 *_u8g){
 
-	  u8g->setFont(u8g_font_6x10);
-	  u8g->drawStr(50,50,"Hello World");
+	  _u8g->setFont(u8g_font_6x10);
+	  _u8g->drawStr(50,50,"Hello World");
 
       /*
 	  int y = 30;

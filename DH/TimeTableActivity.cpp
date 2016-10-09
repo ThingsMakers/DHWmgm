@@ -81,7 +81,7 @@ void TimeTableActivity::drawDaysMenu(int day_index){
 
 void TimeTableActivity::drawDayTimeTable(int day_index){
 
-    times[day_index].drawTimeTables(); // ne poziva ???
+    times[day_index].drawTimeTables(u8g); // ne poziva ???
 
 }
 
