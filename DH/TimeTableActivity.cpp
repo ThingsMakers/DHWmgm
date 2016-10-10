@@ -42,6 +42,10 @@ void TimeTableActivity::draw(){
 		day_index -= 1;
 		break;
 
+	case 2:
+    handleTimeTableSettings(day_index);
+    break;
+
 	case 3:
 		day_index += 1;
 		if(day_index > 6)
@@ -81,7 +85,52 @@ void TimeTableActivity::drawDaysMenu(int day_index){
 
 void TimeTableActivity::drawDayTimeTable(int day_index){
 
-    times[day_index].drawTimeTables(u8g); // ne poziva ???
-
+    times[day_index].drawTimeTables(u8g);
 }
+
+void TimeTableActivity::handleTimeTableSettings(int day_index){
+
+	  int row=0;
+	  int col=0;
+	  int input;
+	  bool selected = false;
+
+	  do{
+
+	  u8g->firstPage();
+	  do {
+	    drawDaysMenu(day_index);
+	    times[day_index].drawModificationTimeTables(row,col, u8g);
+
+	      } while( u8g->nextPage() );
+
+	    input=analogRead(15)/140; // uzmi input sa tastature
+	    delay(130);
+
+	    if(input == 5){
+	    	selected = !selected;
+	    }
+	    // ako sam u time-modification mode-u.
+	    if(selected == true){
+
+	    times[day_index].checkAndSetTime(row, input); // provjeri da li je time iznad set-up, ako da, init ovaj na kraj onog iznad.
+	    times[day_index].update(input, row,col); // metoda koja update-a model podataka.
+
+	    }else{
+
+	    switch(input){
+	      case 0: col -= 1; break;
+	      case 1: row -= 1; break;
+	      case 2: row += 1; break;
+	      case 3: col += 1; break;
+	      //case 5: selected = !selected; break;
+	    }
+
+	    }
+
+
+	    }while(row !=-1);
+}
+
+
 

@@ -24,6 +24,7 @@ private:
 
 	void drawDaysMenu(int);
 	void drawDayTimeTable(int);
+	void handleTimeTableSettings(int);
 };
 
 #endif /* TIMETABLEACTIVITY_H_ */

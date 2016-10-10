@@ -151,12 +151,19 @@ void TimeSpan::decrementEnd(){
 	   decrementBegin();
 }
 
-void TimeSpan::updateEnd(int hour, int minute){
+void TimeSpan::updateEnd(int minute, int hour){
 
-	 if(minute > 50){
+	 _hourEnd = hour;
+	 _minuteEnd = minute;
+
+	 incrementEnd();
+
+	 if(_minuteEnd > 50){
 	      _minuteEnd = 0;
 	      _hourEnd += 1;
 	     }
+
+
 }
 
 void TimeSpan::incrementTemp(){

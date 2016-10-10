@@ -17,10 +17,10 @@ TimeTable::~TimeTable() {
 }
 
 
-void TimeTable::drawModificationTimeTables(int row, int col){
+void TimeTable::drawModificationTimeTables(int row, int col, U8GLIB_SSD1306_128X64 *_u8g){
 
 
-	  u8g->setFont(u8g_font_6x10);
+	  _u8g->setFont(u8g_font_6x10);
 	  int y = 30;
 	  String newString;
 
@@ -65,7 +65,7 @@ void TimeTable::drawModificationTimeTables(int row, int col){
 	      int size = newString.length()+1;
 	      char buffer[size];
 	      newString.toCharArray(buffer,size);
-	      u8g->drawStr(1, y, buffer);
+	      _u8g->drawStr(1, y, buffer);
 	      y += 14;
 	  }
 
@@ -75,18 +75,16 @@ void TimeTable::drawModificationTimeTables(int row, int col){
 void TimeTable::drawTimeTables(U8GLIB_SSD1306_128X64 *_u8g){
 
 	  _u8g->setFont(u8g_font_6x10);
-	  _u8g->drawStr(50,50,"Hello World");
 
-      /*
 	  int y = 30;
 	  for(int i = 0; i < 3;i++){
 	   String newString = " "+vremena[i].getTextBegin()+" - "+vremena[i].getTextEnd()+" " +vremena[i].getTextTemp()+" ";
 	   int size = newString.length()+1;
 	   char buffer[size];
 	   newString.toCharArray(buffer,size);
-	   u8g->drawStr(1, y, "Hello World");
+	   _u8g->drawStr(1, y,buffer);
 	   y += 14;
-	  }*/
+	  }
 }
 
 void TimeTable::update(int cmd, int row, int col){

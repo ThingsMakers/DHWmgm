@@ -15,7 +15,7 @@ class TimeTable {
 public:
     TimeTable();
 	virtual ~TimeTable();
-	void drawModificationTimeTables(int, int);
+	void drawModificationTimeTables(int, int, U8GLIB_SSD1306_128X64*);
 	void drawTimeTables(U8GLIB_SSD1306_128X64*);
 	void update(int, int, int);
 	void checkAndSetTime(int, int);
