@@ -89,6 +89,10 @@ void TimeTable::drawTimeTables(U8GLIB_SSD1306_128X64 *_u8g){
 
 void TimeTable::update(int cmd, int row, int col){
 
+	   if(row == 0 && col > 0){
+		     if(vremena[row].getMinuteBegin() == -1 || vremena[row].getHourBegin() == -1)
+		     return;
+	   }
 
 	   if(row > 0){
 	     if(vremena[row-1].getMinuteBegin() == -1 || vremena[row-1].getHourBegin() == -1)
@@ -101,16 +105,38 @@ void TimeTable::update(int cmd, int row, int col){
 
 	   switch(col){
 	    case 0:
-	    if(cmd == 1)
+	    if(cmd == 1){
 	    vremena[row].incrementBegin();
-	    if(cmd == 2)
+	    // ovde cross
+	    if(vremena[row+1].getHourBegin() > -1){
+	    	if( vremena[row].getHourEnd() == vremena[row+1].getHourBegin() && vremena[row].getMinuteEnd() > vremena[row+1].getMinuteBegin() ){
+	    		vremena[row+1].incrementBegin();
+	    	}
+	    }
+
+	    }
+
+	    if(cmd == 2){
+        if(vremena[row].getMinuteBegin() == vremena[row-1].getMinuteEnd() && vremena[row].getHourBegin() == vremena[row-1].getHourEnd())
+        	vremena[row].reset();
+
+        else
 	    vremena[row].decrementBegin();
+	    }
 	    break;
 	    case 1:
-	    if(cmd == 1)
+	    if(cmd == 1){
 	    vremena[row].incrementEnd();
+
+	    if(vremena[row+1].getHourBegin() > -1){
+	    	  if(vremena[row].getHourEnd() == vremena[row+1].getHourBegin() && vremena[row].getMinuteEnd() > vremena[row+1].getMinuteBegin()){
+	    	     vremena[row+1].incrementBegin(); }
+	    	   }
+	    }
+
 	    if(cmd == 2)
 	    vremena[row].decrementEnd();
+
 	    break;
 	    case 2:
 	    if(cmd == 1)
@@ -121,9 +147,12 @@ void TimeTable::update(int cmd, int row, int col){
 	   }
 }
 
-void TimeTable::checkAndSetTime(int row, int cmd){
+void TimeTable::checkAndSetTime(int row, int cmd, int col){
 
     if(row > 0){
+
+    	if(col > 0 && (vremena[row].getMinuteBegin() == -1 || vremena[row].getHourBegin() == -1))
+		return;
 
      if( cmd == 5 && (vremena[row].getMinuteBegin() == -1 || vremena[row].getHourBegin() == -1) &&  (vremena[row-1].getMinuteBegin() != -1 || vremena[row-1].getHourBegin() != -1)){
         vremena[row].setMinuteBegin(vremena[row-1].getMinuteEnd());

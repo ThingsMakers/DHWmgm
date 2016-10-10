@@ -37,6 +37,7 @@ public:
 	void updateEnd(int,int);
 	void incrementTemp();
 	void decrementTemp();
+	void reset();
 
 	// text getters -> what will be displayed on screen
 	String getTextBegin()const;

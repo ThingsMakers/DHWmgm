@@ -261,5 +261,14 @@ String TimeSpan::getTextTemp()const{
 	    return temp;
 }
 
+void TimeSpan::reset(){
+
+	     _hourBegin = -1;
+	     _hourEnd = -1;
+	     _minuteBegin = -1;
+		 _minuteEnd = -1;
+		 _temperature = -1;
+}
+
 
 

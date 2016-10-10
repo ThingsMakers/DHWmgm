@@ -113,16 +113,32 @@ void TimeTableActivity::handleTimeTableSettings(int day_index){
 	    // ako sam u time-modification mode-u.
 	    if(selected == true){
 
-	    times[day_index].checkAndSetTime(row, input); // provjeri da li je time iznad set-up, ako da, init ovaj na kraj onog iznad.
+	    times[day_index].checkAndSetTime(row, input, col); // provjeri da li je time iznad set-up, ako da, init ovaj na kraj onog iznad.
 	    times[day_index].update(input, row,col); // metoda koja update-a model podataka.
 
 	    }else{
 
 	    switch(input){
-	      case 0: col -= 1; break;
-	      case 1: row -= 1; break;
-	      case 2: row += 1; break;
-	      case 3: col += 1; break;
+	      case 0:
+	      col -= 1;
+	      if(col < 0)
+	    	  col = 2;
+	      break;
+	      case 1:
+	      row -= 1;
+	      if(row < 0)
+	    	  row = 2;
+	      break;
+	      case 2:
+	      row += 1;
+	      if(row > 2)
+	    	  row = 0;
+	      break;
+	      case 3:
+	      col += 1;
+		  if(col > 2 )
+		      col = 0;
+	      break;
 	      //case 5: selected = !selected; break;
 	    }
 
