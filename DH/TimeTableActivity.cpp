@@ -23,6 +23,10 @@ void TimeTableActivity::draw(){
 	int input;
 	int day_index = 0;
 
+	int flag = EEPROM.read(0);
+	if(flag == 28)
+		readTimeTable();
+
 	do{
 
 		u8g->firstPage();
@@ -94,6 +98,7 @@ void TimeTableActivity::handleTimeTableSettings(int day_index){
 	  int col=0;
 	  int input;
 	  bool selected = false;
+	  bool end_loop = false;
 
 	  do{
 
@@ -125,6 +130,9 @@ void TimeTableActivity::handleTimeTableSettings(int day_index){
 	    	  col = 2;
 	      break;
 	      case 1:
+	      if(row == 0 && col == 0)
+	    	  end_loop = true;
+
 	      row -= 1;
 	      if(row < 0)
 	    	  row = 2;
@@ -142,17 +150,119 @@ void TimeTableActivity::handleTimeTableSettings(int day_index){
 	      //case 5: selected = !selected; break;
 	    }
 
+	    if(end_loop == true)
+	    	break;
+
 	    }
 
-
-	    }while(row !=-1);
+	    }while(true);
 
 	  // upon leaving timetable modificatin loop, save the new state to memory.
+      saveTimeTable();
 
-	  for(int i = 0; i < 7; i++){
-
-	  }
 }
+
+void TimeTableActivity::saveTimeTable(){
+
+	int addr = 0;
+
+	EEPROM.write(addr, 28); // 28 je flag na prvoj mem. lokaciji koji oznacava da je timetable upisivan u EEPROM barem jednom.
+
+	addr += 1;
+
+	for(int i = 0; i < 7; i++){
+
+          for(int x = 0; x < 3; x++){
+
+        	  EEPROM.write(addr, times[i].vremena[x].getHourBegin()); // spasi pocetni sat
+        	  addr += 1;
+        	  EEPROM.write(addr, times[i].vremena[x].getMinuteBegin()); // spasi pocetnu minutu
+        	  addr += 1;
+        	  EEPROM.write(addr, times[i].vremena[x].getHourEnd()); // spasi zavrsni sat
+        	  addr += 1;
+        	  EEPROM.write(addr, times[i].vremena[x].getMinuteEnd()); // spasi pocetni sat
+        	  addr += 1;
+        	  EEPROM.write(addr, times[x].vremena[x].getTemp()); // spasi pocetni sat
+        	  addr += 1;
+
+          }
+	}
+}
+
+void TimeTableActivity::readTimeTable(){
+
+	int addr = 1;
+	int value;
+
+	for(int i = 0; i < 7; i++){
+
+          for(int x = 0; x < 3; x++){
+
+        	 value = EEPROM.read(addr);
+        	 if(value == 255)
+        		 value = -1;
+        	 times[i].vremena[x].setHourBegin(value);
+        	 addr += 1;
+
+        	 value = EEPROM.read(addr);
+        	 if(value == 255)
+        	     value = -1;
+        	 times[i].vremena[x].setMinuteBegin(value);
+        	 addr += 1;
+
+        	 value = EEPROM.read(addr);
+        	 if(value == 255)
+        	  value = -1;
+        	 times[i].vremena[x].setHourEnd(value);
+        	 addr += 1;
+
+        	 value = EEPROM.read(addr);
+        	 if(value == 255)
+        	     value = -1;
+        	 times[i].vremena[x].setMinuteEnd(value);
+        	 addr += 1;
+
+        	 value = EEPROM.read(addr);
+        	 if(value == 255)
+        	     value = -1;
+        	 times[i].vremena[x].setTemp(value);
+        	 addr += 1;
+
+          }
+	}
+
+}
+
+void TimeTableActivity::clearMemory(){
+
+	int addr = 1;
+
+	for(int i = 0; i < 7; i++){
+
+	          for(int x = 0; x < 3; x++){
+
+	        	  EEPROM.write(addr, -1); // spasi pocetni sat
+	        	  addr += 1;
+	        	  EEPROM.write(addr, -1); // spasi pocetnu minutu
+	        	  addr += 1;
+	        	  EEPROM.write(addr, -1); // spasi zavrsni sat
+	        	  addr += 1;
+	        	  EEPROM.write(addr, -1); // spasi pocetni sat
+	        	  addr += 1;
+	        	  EEPROM.write(addr, -1); // spasi pocetni sat
+	        	  addr += 1;
+
+	          }
+		}
+
+}
+
+
+
+
+
+
+
 
 
 

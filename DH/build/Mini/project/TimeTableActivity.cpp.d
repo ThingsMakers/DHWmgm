@@ -15,4 +15,5 @@ project/TimeTableActivity.cpp.o: ../../TimeTableActivity.cpp \
  C:/Users/Nihad/.arduinocdt/packages/arduino/hardware/avr/1.6.14/cores/arduino/Arduino.h \
  C:/Users/Nihad/.arduinocdt/packages/arduino/hardware/avr/1.6.14/variants/eightanaloginputs/pins_arduino.h \
  C:/Users/Nihad/.arduinocdt/packages/arduino/hardware/avr/1.6.14/variants/eightanaloginputs/../standard/pins_arduino.h \
- ../../TimeTable.h ../../TimeSpan.h
+ ../../TimeTable.h ../../TimeSpan.h \
+ C:/Users/Nihad/.arduinocdt/packages/arduino/hardware/avr/1.6.14/libraries/EEPROM/src/EEPROM.h

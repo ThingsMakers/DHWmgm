@@ -1,2 +1,2 @@
 eclipse.preferences.version=1
-libraries=["U8glib"]
+libraries=[{"package"\:"arduino","platform"\:"avr","library"\:"EEPROM"},"U8glib"]

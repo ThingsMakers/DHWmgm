@@ -11,6 +11,7 @@
 #include "U8glib.h"
 #include <Arduino.h>
 #include "TimeTable.h"
+#include <EEPROM.h>
 
 class TimeTableActivity {
 public:
@@ -25,6 +26,9 @@ private:
 	void drawDaysMenu(int);
 	void drawDayTimeTable(int);
 	void handleTimeTableSettings(int);
+	void saveTimeTable();
+	void readTimeTable();
+	void clearMemory();
 };
 
 #endif /* TIMETABLEACTIVITY_H_ */

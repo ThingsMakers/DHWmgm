@@ -13,6 +13,8 @@
 
 class TimeTable {
 public:
+
+	TimeSpan vremena[3];
     TimeTable();
 	virtual ~TimeTable();
 	void drawModificationTimeTables(int, int, U8GLIB_SSD1306_128X64*);
@@ -22,7 +24,7 @@ public:
 	bool shouldDeselect(int);
 
 private:
-	 TimeSpan vremena[3];
+	 //TimeSpan vremena[3];
 	 U8GLIB_SSD1306_128X64 *u8g;
 };
 
