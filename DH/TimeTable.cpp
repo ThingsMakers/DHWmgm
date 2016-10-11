@@ -99,7 +99,8 @@ void TimeTable::update(int cmd, int row, int col){
 	     return;
 
 	   }else if(row == 0 && cmd == 5 && (vremena[row].getMinuteBegin() == -1 || vremena[row].getHourBegin() == -1) ){
-	    vremena[row].incrementBegin();
+	    //vremena[row].incrementBegin();
+		   vremena[row].initSelectedTime();
 	    return;
 	   }
 
@@ -109,7 +110,7 @@ void TimeTable::update(int cmd, int row, int col){
 	    vremena[row].incrementBegin();
 	    // ovde cross
 	    if(vremena[row+1].getHourBegin() > -1){
-	    	if( vremena[row].getHourEnd() == vremena[row+1].getHourBegin() && vremena[row].getMinuteEnd() > vremena[row+1].getMinuteBegin() ){
+	    	if( (vremena[row].getHourEnd() == vremena[row+1].getHourBegin() && vremena[row].getMinuteEnd() > vremena[row+1].getMinuteBegin()) || vremena[row].getHourEnd() > vremena[row+1].getHourBegin()){
 	    		vremena[row+1].incrementBegin();
 	    	}
 	    }
@@ -124,20 +125,29 @@ void TimeTable::update(int cmd, int row, int col){
 	    vremena[row].decrementBegin();
 	    }
 	    break;
+
 	    case 1:
 	    if(cmd == 1){
 	    vremena[row].incrementEnd();
 
 	    if(vremena[row+1].getHourBegin() > -1){
-	    	  if(vremena[row].getHourEnd() == vremena[row+1].getHourBegin() && vremena[row].getMinuteEnd() > vremena[row+1].getMinuteBegin()){
+	    	  if((vremena[row].getHourEnd() == vremena[row+1].getHourBegin() && vremena[row].getMinuteEnd() > vremena[row+1].getMinuteBegin()) || vremena[row].getHourEnd() > vremena[row+1].getHourBegin()){
 	    	     vremena[row+1].incrementBegin(); }
 	    	   }
 	    }
 
-	    if(cmd == 2)
-	    vremena[row].decrementEnd();
+	    if(cmd == 2){
+
+	    if(vremena[row].getMinuteBegin() == vremena[row-1].getMinuteEnd() && vremena[row].getHourBegin() == vremena[row-1].getHourEnd())
+	           vremena[row].reset();
+
+	    else
+		    vremena[row].decrementEnd();
+
+	   }
 
 	    break;
+
 	    case 2:
 	    if(cmd == 1)
 	    vremena[row].incrementTemp();

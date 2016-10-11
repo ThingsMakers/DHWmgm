@@ -38,6 +38,7 @@ public:
 	void incrementTemp();
 	void decrementTemp();
 	void reset();
+	void initSelectedTime();
 
 	// text getters -> what will be displayed on screen
 	String getTextBegin()const;

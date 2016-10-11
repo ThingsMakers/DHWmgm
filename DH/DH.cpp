@@ -48,7 +48,6 @@ void drawActivity(){
 }
 
 void setup() {
-
 }
 
 void loop() {

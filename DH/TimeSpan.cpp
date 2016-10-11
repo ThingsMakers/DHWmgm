@@ -62,6 +62,14 @@ void TimeSpan::setTemp(int t){
 	_temperature = t;
 }
 
+void TimeSpan::initSelectedTime(){
+	_minuteBegin = 0;
+	_hourBegin = 0;
+	_minuteEnd = 10;
+	_hourEnd = 0;
+
+}
+
 void TimeSpan::incrementBegin(){
 
 	  if(_minuteBegin == -1 && _hourBegin == -1){
@@ -84,6 +92,8 @@ void TimeSpan::incrementBegin(){
 	   incrementEnd();
 
 }
+
+
 
 void TimeSpan::incrementEnd(){
 

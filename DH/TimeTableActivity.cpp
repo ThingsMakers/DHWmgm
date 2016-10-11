@@ -146,6 +146,12 @@ void TimeTableActivity::handleTimeTableSettings(int day_index){
 
 
 	    }while(row !=-1);
+
+	  // upon leaving timetable modificatin loop, save the new state to memory.
+
+	  for(int i = 0; i < 7; i++){
+
+	  }
 }
 
 
