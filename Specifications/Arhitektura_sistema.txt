@@ -1,0 +1,62 @@
+
+Interfaces
+
+1. Ardiono 328 Mini Pro --> 1.8 inch TFT SPI Display.
+
+Koristi se HW SPI interfejs uz regulaciju napona (CD4050) na 3.3V. Napajanje pozadinskog osvjetljenje (5V 4.1mA) preko pin-a A1. Display ima regulator napajanja pa se moze napajati sa 5V.
+
+ARDU	-	4050	-	DISP	-	PSU
+
+8		->	7	6	->	1 RST
+10(SS)	->	11	12	->	2 CS
+9		->	9	10	->	3 D/C
+11(MOSI)->	5	4	->	4 DIN
+13(SCK)	->	3	2	->	5 CLK
+						6 VCC		<-	5V
+A1		->	-	-	->	7 BL
+						8 GND		<-	GND
+
+2. Ardiono 328 Mini Pro --> RTC module ZS-042
+
+RTC modul koristi I2C interfejs i napaja se sa 5V.
+
+ARDU	-	RTC		-	PSU
+A4		->	SDA
+A5		->	SCL
+			VCC		<-	5V
+			GND		<-	GND
+
+3. Ardiono 328 Mini Pro --> Sensor DS18B20 Digital Thermal Probe
+
+DS18B20 je OneWire senzor temperature i za komunikaciju sa arduinom koristi digitalni pin (PULL_UP R4K7) i napaja se sa 5V.
+
+ARDU	-	18B20	-	PSU
+2		->	BLUE
+2		->	R4K7	<-	5V
+			RED		<-	5V
+			BLACK	<-	GND
+
+4. Ardiono 328 Mini Pro --> Digital KeyPad
+
+Digital KeyPad za svaki od 5 prekidaca koristi po jedan digitalni pin (pinMode PULL_UP). Pritiskom na prekidac input pin se spaja na GND.
+
+ARDU	-	DKP	-	PSU
+3		-	LEFT
+4		-	UP
+5		-	DOWN
+6		-	RIGHT
+7		-	SELRCT
+			6	-	GND
+
+4. Ardiono 328 Mini Pro --> SSR
+
+SSR na ulazu ne vuce vise od 6 mA te se pobudjuje direktno sa pin-a A0.
+
+ARDU	-	SSR	-	PSU
+A0		->	3
+			4	<-	GND
+
+
+Zauzeto na arduinu:
+
+2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, A0, A1, A4, A5
