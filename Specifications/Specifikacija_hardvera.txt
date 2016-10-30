@@ -1,0 +1,101 @@
+HW pecifikacija
+
+
+1. Arduino Pro Mini board with male pins headers
+
+	Tech. Spec:
+	Microcontroller	ATmega328P
+	Board Power Supply 5 - 12 V (5V model)
+	Circuit Operating Voltage 5V
+	Digital I/O Pins	14
+	PWM Pins	6
+	UART	1
+	SPI	1
+	I2C	1
+	Analog Input Pins	6
+	External Interrupts	2
+	DC Current per I/O Pin	40 mA
+	Flash Memory	32KB of which 2 KB used by bootloader
+	SRAM	2 KB
+	EEPROM	1 KB
+	Clock 16 MHz 
+
+
+2. RTC module ZS-042
+
+	Tech. Spec:	
+	RTC Chip DS3231
+	Highly Accurate RTC Completely Manages All Timekeeping Functions
+	Real-Time Clock Counts Seconds, Minutes, Hours, Date of the Month, Month, Day of the Week, and Year, with Leap-Year Compensation Valid Up to 2100
+	Accuracy ±2ppm from 0°C to +40°C
+	Accuracy ±3.5ppm from -40°C to +85°C
+	Digital Temp Sensor Output: ±3°C Accuracy
+	Register for Aging Trim
+	Active-Low RST Output/Pushbutton Reset Debounce Input
+	Two Time-of-Day Alarms
+	Programmable Square-Wave Output Signal
+	Simple Serial Interface Connects to Most Microcontrollers
+	Fast (400kHz) I2C Interface
+	Battery-Backup Input for Continuous Timekeeping
+	Low Power Operation Extends Battery-Backup Run Time
+	3.3V Operation
+	Operating Temperature Ranges: Commercial (0°C to +70°C) and Industrial (-40°C to +85°C)
+	Underwriters Laboratories® (UL) Recognized
+
+
+3. Waterproof Digital Thermal Probe
+
+	Tech. Spec:
+	Sensor DS18B20
+	Measures Temperatures from -55°C to +125°C (-67°F to +257°F)
+	±0.5°C Accuracy from -10°C to +85°C
+	Programmable Resolution from 9 Bits to 12 Bits
+
+
+4. BlueTooth serial module
+
+
+
+5. GSM module
+
+	Model: SIM800L
+	Work voltage: 3.7~5V
+	Network support: Quad-Band 850/900/1800/1900 MHz
+	TTL serial interface compatible with 3.3V and 5V MCU
+
+
+6. SSR Module SSR-40 DA
+
+	Tech. Spec:
+	Output voltage: AC 24-380V.
+	Output current: 40A.
+	Input voltage: DC 3-32V.
+
+
+7. PSU StepDown AC220V-DC5V
+
+	Tech. Spec:
+	-Input voltage of AC 85 ~ 265v 50/60 HZ
+	-Output voltage DC5V（±0.2V）
+	-Output current 1000MA
+	-Power 5w
+
+
+8. LCD Display
+
+	Tech. Spec:
+	-1.8 inch colour TFT display
+	-SPI interface
+	-Input voltage DC5V, for SPI signals DC3.3V
+	-Controller chip ST7735
+
+9. Analog Keypad (CONVERTED TO DIGITAL)
+
+	Tech. Spec:
+	-Model: Keyes_AD_Key.
+	-5 switchs (LEFT, UP, DOWN, RIGHT, SELECT)
+	-Digital pins with pulldown resistors (10k)
+
+10. Plastic box enclosure
+
+
