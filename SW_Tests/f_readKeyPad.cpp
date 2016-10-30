@@ -11,7 +11,7 @@ unsigned long lastKeyPressedTime;
 
 uint8_t readKeyPad(uint8_t keyRepeatSpeed){
 	uint8_t kpVal=analogRead(0)/60;
-	if (kpVal != btnNONE & lastKeyPressedTime + keyRepeatSpeed * 100 < millis()){
+	if (kpVal ! btnNONE && lastKeyPressedTime + keyRepeatSpeed * 100 < millis()){
 		lastKeyPressedTime = millis();
 		return kpVal;
 	}
