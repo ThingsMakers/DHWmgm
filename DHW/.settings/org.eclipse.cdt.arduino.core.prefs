@@ -1,0 +1,2 @@
+eclipse.preferences.version=1
+libraries=["EnableInterrupt","RTClib",{"package"\:"arduino","platform"\:"avr","library"\:"Wire"},"DallasTemperature","OneWire","Ucglib",{"package"\:"arduino","platform"\:"avr","library"\:"SPI"}]
